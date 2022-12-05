@@ -43,3 +43,41 @@ class Repository2 {
     }
   }
 }
+
+class Repository3 {
+  static Future<List<Products>> getData() async {
+    final response = await http.get(
+        Uri.parse('https://api1.sib3.nurulfikri.com/api/barang?search=Adidas'),
+        headers: {
+          HttpHeaders.authorizationHeader:
+              'Bearer 2311|TFMzbXWyypxT6mTsot6sd3TwM5dJSFZ7KiOWsyIW',
+          HttpHeaders.contentTypeHeader: 'application/json'
+        });
+
+    if (response.statusCode == 200) {
+      List responseJson = (json.decode(response.body))['data'];
+      return responseJson.map((data) => Products.fromJson(data)).toList();
+    } else {
+      throw Exception('Failed to load Data');
+    }
+  }
+}
+
+class Repository4 {
+  static Future<List<Products>> getData() async {
+    final response = await http.get(
+        Uri.parse('https://api1.sib3.nurulfikri.com/api/barang?search=Puma'),
+        headers: {
+          HttpHeaders.authorizationHeader:
+              'Bearer 2311|TFMzbXWyypxT6mTsot6sd3TwM5dJSFZ7KiOWsyIW',
+          HttpHeaders.contentTypeHeader: 'application/json'
+        });
+
+    if (response.statusCode == 200) {
+      List responseJson = (json.decode(response.body))['data'];
+      return responseJson.map((data) => Products.fromJson(data)).toList();
+    } else {
+      throw Exception('Failed to load Data');
+    }
+  }
+}

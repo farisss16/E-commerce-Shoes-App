@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:finalproject/component/adidas.dart';
 import 'package:finalproject/component/categories.dart';
 import 'package:finalproject/component/nike.dart';
+import 'package:finalproject/component/puma.dart';
 import 'package:finalproject/component/vans.dart';
 import 'package:flutter/material.dart';
 
@@ -125,6 +127,56 @@ class _HomePageState extends State<HomePage> {
               width: size.width,
               // color: Colors.amber,
               child: VansShoes(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Adidas',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('View all'),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: size.height * 0.2,
+              width: size.width,
+              // color: Colors.amber,
+              child: AdidasShoes(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Puma',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('View all'),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: size.height * 0.2,
+              width: size.width,
+              // color: Colors.amber,
+              child: PumaShoes(),
             ),
           ],
         ),
